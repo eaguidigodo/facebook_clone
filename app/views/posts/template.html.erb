@@ -204,10 +204,7 @@
         alt=""
       />
       <form>
-      <%= form_with(model: @post, local: true) do |f|%>
-        <%=f.text_field :content, placeholder: "What's on your mind?" %>
-        <%= f.submit "Publish your Post" %>
-        <% end %>
+        <input class="messageSender__input" placeholder="What's on your mind?" type="text" />
       </form>
     </div>
 
