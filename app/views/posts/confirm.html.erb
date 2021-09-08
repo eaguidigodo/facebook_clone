@@ -205,7 +205,9 @@
       />
      
       <%= form_with(model: @post, local: true) do |f|%>
-        <%=f.text_field :content, placeholder: "What's on your mind?" %>
+        <%= f.hidden_field :content %>
+        <p><%= @post.content %></p>
+        <%= f.submit "Confirm your Post" %>
         <% end %>
       
     </div>
@@ -230,7 +232,6 @@
   <!-- message sender ends -->
 
   <!-- post starts -->
-  <% @posts.each do |post| %>
   <div class="post">
     <div class="post__top">
       <img
@@ -239,18 +240,18 @@
         alt=""
       />
       <div class="post__topInfo">
-        <h3><%= post.user_id%></h3>
-        <p><%= post.created_at%></p>
+        <h3>Somanath Goudar</h3>
+        <p>25 April at 20:30</p>
       </div>
     </div>
 
     <div class="post__bottom">
-      <p><%= post.content%></p>
+      <p>Message</p>
     </div>
 
     <div class="post__image">
       <img
-        src=""
+        src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
         alt=""
       />
     </div>
@@ -272,7 +273,6 @@
       </div>
     </div>
   </div>
-  <% end %>
   <!-- post ends -->
 
  

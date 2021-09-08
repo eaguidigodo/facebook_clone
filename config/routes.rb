@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   get 'posts/index'
+  post 'posts/confirm'
   resources :posts
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
