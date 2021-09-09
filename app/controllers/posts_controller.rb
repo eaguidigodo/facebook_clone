@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
   def index
     @users_name_and_mail = {}
+    raise
     @post = Post.new
     @posts = Post.all
     @users = User.all
