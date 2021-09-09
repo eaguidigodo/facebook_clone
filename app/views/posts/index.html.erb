@@ -273,20 +273,21 @@
         <span class="material-icons"> near_me </span>
         <p>Share</p>
       </div>
-
+          <% if current_user.email == @users_name_and_mail[ post.user_id][1] %> 
       <div class="post__option">
         <span class="material-icons"> edit </span>
         <%=link_to edit_post_path(post.id), data:{ confirm: 'Edit this post?'} do %>
         <p>Edit</p>
         <% end %>
       </div>
-
+          
       <div class="post__option">
       <%=link_to post_path(post.id), method: :delete, data:{ confirm: 'Delete this post?'} do %>
         <span class="material-icons"> delete </span>
         <p>Delete</p>
         <% end %>
      </div>
+     <% end %>
     </div>
   </div>
   <% end %>
