@@ -205,7 +205,7 @@
         alt=""
       />
      
-      <%= form_with(model: @post, local: true) do |f|%>
+      <%= form_with(model: @post, local: true, url: confirm_posts_path) do |f|%>
         <%=f.text_field :content, placeholder: "What's on your mind?" %>
         
       

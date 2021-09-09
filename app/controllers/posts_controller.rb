@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
   def index
     @users_name_and_mail = {}
-    raise
     @post = Post.new
     @posts = Post.all
     @users = User.all
@@ -20,9 +19,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def Confirm
+  def confirm
     @post = current_user.posts.build(post_params)
-    render :index if @blog.invalid?
+    render :index if @post.invalid?
   end
 
   def edit
