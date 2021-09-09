@@ -243,7 +243,7 @@
         alt=""
       />
       <div class="post__topInfo">
-        <h3><%= post.user_id%></h3>
+        <h3><%= @users_name_and_mail[ post.user_id][0]%></h3>
         <p><%= post.created_at%></p>
       </div>
     </div>

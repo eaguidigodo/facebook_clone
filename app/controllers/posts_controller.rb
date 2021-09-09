@@ -1,8 +1,13 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
   def index
+    @users_name_and_mail = {}
     @post = Post.new
     @posts = Post.all
+    @users = User.all
+    @users.each do |user|
+      @users_name_and_mail[user["id"]] = [user["name"], user["email"]]
+    end
   end
 
   def create
