@@ -219,6 +219,7 @@
 
       <div class="messageSender__option">
         <span style="color: green" class="material-icons"> photo_library </span>
+        <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
         <h3>Photo</h3>
